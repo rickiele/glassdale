@@ -1,11 +1,15 @@
-import { getCriminals, useCriminals } from './criminals/criminalProvider.js'
+import { getCriminals, useCriminals } from './criminalProvider.js'
+
+const criminalElement = document.querySelector(".criminalsContainer");
+let criminalCards = []
 
 export const criminalList = () => {
-    getCriminals().then(
-        useCriminals()
-      /*
-            Now that you have the data, what
-            component should be rendered?
-        */
-    )
-};
+    getCriminals().then( () => {
+      let perps = useCriminals()
+
+      for (const perp of perps) {
+        criminalCards.push(criminal(perp))
+      }
+      criminalElement.innerHTML = criminalCards.join("")
+    })
+}
