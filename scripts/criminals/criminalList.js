@@ -5,21 +5,26 @@ import { criminal } from './criminals.js'
 //criminalElement stores document.querySelector(".criminalsContainer")
 const criminalElement = document.querySelector(".criminalsContainer");
 
-// Emty array which will hold the 
+// Empty array which the criminals data will push into
 let criminalCards = []
 
-//  Function which 
+//  Function which will take the criminals api data and store into a variable (perps)
 export const criminalList = () => {
+  
     // getCriminals returns a promise, which allows you to chain .then
     // calls getCriminals
     getCriminals().then( () => {
       // useCriminals function is stored into variable perps
       let perps = useCriminals()
-
-      // within useCriminals(perps), we want to add to criminalCards
+      
+      // Then within perps, we want to push the data into the empty array above
       for (const perp of perps) {
         criminalCards.push(criminal(perp))
       }
+    
+      // MDN: The join() method creates and returns a new string 
+      // by concatenating all of the elements in an array
+      // Sticking the cards into the DOM
       criminalElement.innerHTML = criminalCards.join("")
     })
 }
