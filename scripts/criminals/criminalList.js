@@ -11,9 +11,12 @@ let criminalCards = []
 //  Function which 
 export const criminalList = () => {
     // getCriminals returns a promise, which allows you to chain .then
+    // calls getCriminals
     getCriminals().then( () => {
+      // useCriminals function is stored into variable perps
       let perps = useCriminals()
 
+      // within useCriminals(perps), we want to add to criminalCards
       for (const perp of perps) {
         criminalCards.push(criminal(perp))
       }
