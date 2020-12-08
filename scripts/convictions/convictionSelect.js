@@ -1,14 +1,19 @@
 /*
- *   ConvictionSelect component that renders a select HTML element
+ *   convictionSelect component that renders a select HTML element
  *   which lists all convictions in the Glassdale PD API
  */
-import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
-const eventHub = document.querySelector(".container");
-const contentTarget = document.querySelector(".filters__crime");
+// listen for the selection of a crime and capture the chosen value
+// send out a message ( customEvent ) via the eventHub
+
+import { getConvictions, useConvictions } from "./convictionProvider.js"
 
 
-// On the event hub, listen for a "change" event.
+
+// Get a reference to the DOM element where the <select> will be rendered
+const contentTarget = document.querySelector(".filters__crime")
+const eventHub = document.querySelector(".container")
+
 eventHub.addEventListener("change", event => {
 
   // Only do this if the `crimeSelect` element was changed
@@ -26,27 +31,8 @@ eventHub.addEventListener("change", event => {
 })
 
 
-
-const render = convictionsCollection => {
-  // Create select dropdown menu 
-  contentTarget.innerHTML = `
-      <select class="dropdown" id="crimeSelect">
-          <option value="0">Please select a crime...</option>
-          ${
-            convictionsCollection.map((crimeObject) => `
-            <option value=${crimeObject.id}>
-              ${crimeObject.name}
-            </option>  
-            `)
-          }
-      </select>
-  `
-}
-
-// Function <convictionSelect>
 export const convictionSelect = () => {
-    // Trigger fetching the API data and loading it into application state
-
+    // Trigger fetching the API data and then loading it into application state
     getConvictions()
     .then( () => {
       // Get all convictions from application state
@@ -55,3 +41,22 @@ export const convictionSelect = () => {
     })
 }
 
+const render = convictionsCollection => {
+    /*
+        Use interpolation here to invoke the map() method on
+        the convictionsCollection to generate the option elements.
+        Look back at the example provided above.
+    */
+    contentTarget.innerHTML = `
+        <select class="dropdown" id="crimeSelect">
+            <option value="0">Please select a crime...</option>
+            ${
+                convictionsCollection.map((crime) => `
+                  <option value=${crime.id}>
+                    ${crime.name}
+                  </option>
+                `)
+            }
+        </select>
+    `
+}
