@@ -1,10 +1,15 @@
 import { criminalList } from './criminals/criminalList.js'
 import { convictionSelect } from './convictions/convictionSelect.js'
 import { officerSelect } from './officers/officerSelect.js'
+import { NoteForm } from './notes/NoteForm.js'
+import { ShowNoteButton } from './notes/ShowNotesButton.js'
+import "./notes/NoteList.js"
 
 criminalList();
 convictionSelect();
 officerSelect();
+NoteForm();
+ShowNoteButton();
 
 
 // TODO:
