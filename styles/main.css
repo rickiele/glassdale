@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /*Typography
 --------------------------------------------------------------*/
@@ -7,15 +7,28 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: "Comfortaa", Arial, sans-serif;
-	font-size: 14px;
+	color: rgb(0, 255, 0);
+	font-family: 'Space Mono', monospace;
+	font-size: 16px;
 	line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Patua One", serif;
+h1,h3,h4,h5,h6 {
+  font-family: 'Space Mono', monospace;
+}
+
+h2 {
+  text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+p {
+  color: rgb(0, 255, 0);
+}
+
+
+body {
+  background-color: black;
 }
 
 .criminalsContainer {
@@ -25,14 +38,64 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .criminal {
-  border: 2px solid blue;
+  border: 1.25px solid rgb(0, 255, 0);
   flex-basis: 25%;
   margin: 12px 0;
-  padding: 0 8px 12px;
+  padding: 20px;
 }
 
+/* 
+.container--left {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+} */
+
 .noteListContainer {
+  background-color: red;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
+
+
+/* CRIME SELECT */
+#crimeSelect {
+  color: black;
+}
+
+/* OFFICER SELECT  */
+#officerSelect {
+  color: black;
+}
+
+/* SAVE NOTES BUTTON */
+
+.noteFormContainer {
+  display: flex;
+	flex-direction: column;
+}
+
+#officer {
+	margin-bottom: 5px;
+}
+
+#suspect {
+	margin-bottom: 5px;
+
+}
+#message {
+
+	margin-bottom: 5px;
+} 
+
+#saveNote {
+  color: black;
+}
+
+/* SHOW NOTES BUTTON */
+#showNotes {
+  color: black;
 }
