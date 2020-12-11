@@ -1,6 +1,7 @@
 export const NoteHTMLConverter = (noteObject) => {
   return `
       <section class="note">
+         <h3>Note ${ noteObject.id }</h3>
           <div class="note__text">Officer: ${ noteObject.officer }</div>
           <div class="note__suspect">Suspect: ${ noteObject.suspect }</div>
           <div class="note__author">Message: ${ noteObject.message }</div>
