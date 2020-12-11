@@ -1,16 +1,28 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 
+// global variable set to false - used to toggle notes on and off
+let visible = false;
+
 // Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".noteList")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("showNotesClicked", customEvent => {
-    NoteList()
+    if (visible === false) {
+        NoteList()
+        visible = true
+    }
+    else {
+        contentTarget.innerHTML = ""
+        visible = false
+    }
 })
 
 eventHub.addEventListener("noteStateChanged", () => {
-  NoteList()
+  if (visible = true) {
+    NoteList()
+  }
 })
 
 const render = (noteArray) => {

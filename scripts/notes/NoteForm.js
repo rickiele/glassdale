@@ -29,6 +29,7 @@ eventHub.addEventListener("click", clickEvent => {
 
 const render = () => {
     contentTarget.innerHTML = `
+    <h2>Suspect Notes</h2>
       <input type="text" id="officer" placeholder="Officer Name">
       <input type="text" id="suspect" placeholder="Suspect Name">
       <textarea id="message"> </textarea>
