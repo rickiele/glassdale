@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
 /* 
-Fix CSS - notes sidebar changes with criminal changes
+Fix CSS - notes sidebar changes with criminal box widths - 
 
 */
 
@@ -101,6 +100,7 @@ aside {
   margin-bottom: 20px;
 }
 
+/* These repeat - figure out what to do */
 #officer {
 	margin-bottom: 5px;
 }
@@ -121,4 +121,10 @@ aside {
 /* SHOW NOTES BUTTON */
 #showNotes {
   color: black;
+}
+
+
+.associate_btn{
+  color: black;
+  margin-top: 20px;
 }

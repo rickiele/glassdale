@@ -1,4 +1,5 @@
 import { saveNote } from "./NoteDataProvider.js"
+import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -26,18 +27,31 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 
-
 const render = () => {
-    contentTarget.innerHTML = `
-    <h2>Suspect Notes</h2>
-      <input type="text" id="officer" placeholder="Officer Name">
-      <input type="text" id="suspect" placeholder="Suspect Name">
-      <textarea id="message"> </textarea>
+  const criminalsCollection = useCriminals()
+
+  contentTarget.innerHTML = `
+    <section class="noteForm">
+      <input type="text" id="author" placeholder="author name">
+      <textarea id="text" placeholder="note text"></textarea>
+      <select class="dropdown" id="suspect">
+          <option value="0">Please select a suspect...</option>
+          ${
+              criminalsCollection.map(
+                (criminal) => `
+                  <option value=${criminal.id}>
+                    ${criminal.name}
+                  </option>
+              `)
+          }
+      </select>
       <button id="saveNote">Save Note</button>
-    `
+    </section>
+  `
 }
 
 export const NoteForm = () => {
-    render()
+  getCriminals()
+  .then( () => render())
 }
 
