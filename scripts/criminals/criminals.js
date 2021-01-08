@@ -4,6 +4,7 @@ const eventHub = document.querySelector(".container")
 // ASSOCIATES BUTTON - DISPATCH
 eventHub.addEventListener("click", (event) => {
   if (event.target.id.includes("associates--")) {
+    console.log("Click Event: Is this working?");
     const customEvent = new CustomEvent("associatesBtnClicked", {
       detail: {
         clickedCriminalId: event.target.id.split("--")[1]

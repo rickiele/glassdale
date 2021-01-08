@@ -36,6 +36,10 @@ body {
   background-color: black;
 }
 
+header {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
 .main-content {
   display: flex;
 }
@@ -127,4 +131,29 @@ aside {
 .associate_btn{
   color: black;
   margin-top: 20px;
+}
+
+#suspect {
+  color: black;
+  padding: 10px;
+  width: 290px;
+}
+
+#note-text {
+  width: 290px;
+  margin-bottom: 5px;
+}
+
+#officer-name {
+  width: 290px;
+  margin-bottom: 5px;
+}
+
+.witnessButton {
+  color: black;
+}
+
+.witnessButton:hover {
+  color: black;
+  background-color: rgb(133, 74, 252);
 }

@@ -31,20 +31,20 @@ const render = () => {
   const criminalsCollection = useCriminals()
 
   contentTarget.innerHTML = `
-    <section class="noteForm">
-      <input type="text" id="author" placeholder="author name">
-      <textarea id="text" placeholder="note text"></textarea>
-      <select class="dropdown" id="suspect">
-          <option value="0">Please select a suspect...</option>
-          ${
-              criminalsCollection.map(
-                (criminal) => `
-                  <option value=${criminal.id}>
-                    ${criminal.name}
-                  </option>
-              `)
-          }
-      </select>
+  <section class="noteForm">
+  <select class="dropdown" id="suspect">
+      <option value="0">Please select a suspect...</option>
+      ${
+          criminalsCollection.map(
+            (criminal) => `
+              <option value=${criminal.id}>
+                ${criminal.name}
+              </option>
+          `)
+      }
+  </select>
+      <input type="text" id="officer-name" placeholder="Officer Name">
+      <textarea id="note-text" placeholder="Insert Note Here"></textarea>
       <button id="saveNote">Save Note</button>
     </section>
   `
