@@ -4,12 +4,14 @@ import { officerSelect } from './officers/officerSelect.js'
 import { NoteForm } from './notes/NoteForm.js'
 import { ShowNoteButton } from './notes/ShowNotesButton.js'
 import "./notes/NoteList.js"
+import { AssociatesDialog } from './criminals/associatesDialog.js'
 
 criminalList();
 convictionSelect();
 officerSelect();
 NoteForm();
 ShowNoteButton();
+AssociatesDialog()
 
 
 // TODO:
